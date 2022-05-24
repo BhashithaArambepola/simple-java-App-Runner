@@ -1,3 +1,5 @@
+
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -5,6 +7,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class AppInitializer extends Application {
 
@@ -14,11 +17,10 @@ public class AppInitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        AnchorPane root = FXMLLoader.load(this.getClass().getResource("SimpleJavaAppRunnerForm.fxml"));
-        Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.setResizable(false);
-        primaryStage.setTitle("Simple Java App Runner");
+
+        primaryStage.setScene(new Scene(FXMLLoader.load(Objects.requireNonNull
+                (this.getClass().getResource("SimpleJavaAppRunner.fxml")))));
         primaryStage.show();
     }
+
 }
